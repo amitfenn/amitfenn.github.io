@@ -1,366 +1,557 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dr. Amit Mathai Fenn - Computational Biologist & Postdoctoral Researcher at TUM and Helmholtz Munich, specializing in alternative splicing, plant-microbe genomics, and transcriptomics">
-    <meta name="keywords" content="computational biology, plant genomics, alternative splicing, transcriptomics, bioinformatics, plant-microbe interactions, RNA-seq, TUM, Helmholtz Munich">
-    <meta name="author" content="Dr. Amit Mathai Fenn">
-    <title>Dr. Amit Mathai Fenn | Computational Biologist & Postdoctoral Researcher</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dr. Amit Mathai Fenn — Computational Biologist & Postdoctoral Researcher at TUM and Helmholtz Munich. Plant-microbe genomics, open-source bioinformatics tools, and biosurveillance.">
+  <meta name="keywords" content="computational biology, plant genomics, alternative splicing, transcriptomics, bioinformatics, plant-microbe interactions, RNA-seq, TUM, Helmholtz Munich, DICAST, nf-core">
+  <meta name="author" content="Dr. Amit Mathai Fenn">
+  <title>Dr. Amit Mathai Fenn | Computational Biologist</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">Dr. Amit Fenn</div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#research">Research</a>
-                <a href="#workshops">Workshops</a>
-                <a href="#cv">CV</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+
+  <!-- ── Navigation ──────────────────────────────────────────── -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">amit.fenn.net</div>
+      <div class="nav-links">
+        <a href="#outputs">Outputs</a>
+        <a href="#open-science">Open Science</a>
+        <a href="#sentry">Sentry Bio</a>
+        <a href="#cv">CV</a>
+        <a href="#contact" class="nav-cta">Get in Touch</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Hero ────────────────────────────────────────────────── -->
+  <section id="home">
+    <div class="hero-bg-rule"></div>
+    <div class="hero-inner">
+
+      <div class="hero-text">
+        <div class="hero-kicker">Postdoctoral Researcher</div>
+        <h1 class="hero-name">Dr. Amit<br>Mathai Fenn</h1>
+        <p class="hero-title-line">Computational Biology · Plant-Microbe Genomics · Open Science</p>
+        <p class="hero-statement">
+          I build open computational tools to understand how plants and
+          microbes interact — from genome assembly and co-expression networks
+          to field-deployable sequencing platforms.
+        </p>
+        <div class="hero-actions">
+          <a href="#outputs" class="btn btn-primary">See My Work</a>
+          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
         </div>
-    </nav>
+      </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Dr. Amit Mathai Fenn</h1>
-                <p class="hero-subtitle">Computational Biologist | Postdoctoral Researcher at TUM & Helmholtz Munich</p>
-                <p class="hero-description">
-                    Advancing plant-microbe genomics and alternative splicing research through
-                    computational innovation and multi-omics integration
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                    <a href="#research" class="btn btn-secondary">Research Interests</a>
-                </div>
-            </div>
+      <div class="hero-institutions">
+        <div class="institution-badge">
+          <div class="institution-dot"></div>
+          <div class="institution-name">
+            Technical University of Munich
+            <span>TUM School of Life Sciences · Weihenstephan</span>
+          </div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I am a computational biologist specializing in alternative splicing, plant-microbe genomics,
-                        and transcriptomics. Currently, I serve as a Postdoctoral Researcher at the Technical University
-                        of Munich (TUM) Weihenstephan and Helmholtz Munich, investigating molecular diversity in
-                        plant-microbe interactions through comparative genomics as part of the TRR 356 collaborative
-                        research initiative.
-                    </p>
-                    <p>
-                        I earned my PhD in Bioinformatics from TUM (2019-2022), where my dissertation
-                        "Towards Reproducibility in Alternative Splicing Analysis" focused on developing reproducible
-                        methodologies for analyzing splice variants, with applications to dilated cardiomyopathy.
-                    </p>
-                    <p>
-                        My research combines computational innovation with biological insights to address fundamental
-                        questions in genomics and systems biology, bridging tool development and applied research.
-                    </p>
-                </div>
-            </div>
+        <div class="institution-badge">
+          <div class="institution-dot"></div>
+          <div class="institution-name">
+            Helmholtz Munich
+            <span>Plant Genome and Systems Biology (PGSB)</span>
+          </div>
         </div>
-    </section>
-
-    <!-- Research Interests Section -->
-    <section id="research" class="section">
-        <div class="container">
-            <h2 class="section-title">Research Interests</h2>
-            <div class="projects-grid">
-
-                <div class="project-card featured">
-                    <div class="project-badge">Featured</div>
-                    <h3>TRR 356 Plant Microbe Initiative</h3>
-                    <p class="project-role">Postdoctoral Researcher — Z03 Group</p>
-                    <p class="project-description">
-                        Serving as bioinformatics core for the TRR356 consortium across TUM, LMU,
-                        Tübingen and MPI institutions — providing analytical support, pipeline
-                        infrastructure, and HPC resource management for 8+ research groups
-                        investigating plant-microbe interactions.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Plant Genomics</span>
-                        <span class="tag">Comparative Genomics</span>
-                        <span class="tag">Microbe Interactions</span>
-                    </div>
-                    <a href="https://trr356plantmicrobe.de/people/employees1/fenn/index.html"
-                       class="project-link">Learn more →</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>Sentry Bio — Biosurveillance Platform</h3>
-                    <p class="project-role">Co-Founder & CTO</p>
-                    <p class="project-description">
-                        Building an autonomous pathogen detection platform using real-time nanopore
-                        sequencing and ML-based taxonomic classification. Developing foundation model
-                        pretraining pipelines for metagenomic sequence analysis.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Foundation Models</span>
-                        <span class="tag">Nanopore Sequencing</span>
-                        <span class="tag">Biosurveillance</span>
-                    </div>
-                    <a href="https://sentry.bio/" class="project-link">Visit Sentry Bio →</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>DICAST — Alternative Splicing Benchmark</h3>
-                    <p class="project-role">Lead Developer</p>
-                    <p class="project-description">
-                        Python-based open benchmarking platform for 20+ RNA splicing detection
-                        methods across clinical RNA-seq datasets. Built and maintained as lead
-                        developer, coordinating contributions from a team of 5 developers.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">RNA-Seq</span>
-                        <span class="tag">Bioinformatics</span>
-                        <span class="tag">Open Source</span>
-                    </div>
-                    <a href="https://dicast.readthedocs.io/en/master/contents.html"
-                       class="project-link">View documentation →</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>Environmental Microbiome Analysis</h3>
-                    <p class="project-role">Collaborator — Helmholtz Munich</p>
-                    <p class="project-description">
-                        Developed a custom NVIDIA Jetson-based compute module paired with Oxford
-                        Nanopore Mk1B for field-deployable real-time basecalling and metagenomic
-                        sequencing of environmental microbial communities.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Metagenomics</span>
-                        <span class="tag">Nanopore</span>
-                        <span class="tag">Edge Computing</span>
-                    </div>
-                    <a href="https://www.biorxiv.org/content/10.1101/2023.12.19.572325v1"
-                       class="project-link">View preprint →</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>Oat Pangenome & Pantranscriptome</h3>
-                    <p class="project-role">Contributor — Nature 2026</p>
-                    <p class="project-description">
-                        Analyzed differentially expressed genes at translocation breakpoints
-                        within the hexaploid oat pangenome, investigating whether structural
-                        genomic rearrangements drive transcriptional changes across diverse
-                        oat varieties.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Pangenomics</span>
-                        <span class="tag">Transcriptomics</span>
-                        <span class="tag">Structural Variation</span>
-                    </div>
-                    <a href="https://www.nature.com/articles/s41586-025-09676-7"
-                       class="project-link">View publication →</a>
-                </div>
-
-            </div>
+        <div class="institution-badge">
+          <div class="institution-dot"></div>
+          <div class="institution-name">
+            TRR 356 Plant Microbe Initiative
+            <span>Bioinformatics Core — Z03 Group</span>
+          </div>
         </div>
-    </section>
-
-    <!-- Workshops Section -->
-    <section id="workshops" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Workshops & Courses</h2>
-            <div class="projects-grid">
-
-                <div class="project-card">
-                    <h3>Introduction to nf-core Pipelines</h3>
-                    <p class="project-role">Workshop Instructor — TRR356 Consortium</p>
-                    <p class="project-description">
-                        Hands-on workshop introducing nf-core bioinformatics pipelines,
-                        covering pipeline execution, configuration, and best practices
-                        for reproducible computational workflows on HPC infrastructure.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Bioinformatics</span>
-                        <span class="tag">Nextflow</span>
-                        <span class="tag">Reproducibility</span>
-                    </div>
-                    <a href="https://gitlab.plantmicrobe.de/z03-workshop/intro-to-nf-core-pipelines"
-                       class="project-link">View materials →</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>Phylogenomics for Plant-Microbe Research</h3>
-                    <p class="project-role">Workshop Instructor — TRR356 Consortium</p>
-                    <p class="project-description">
-                        Hands-on workshop on phylogenomic methods for the TRR356 Plant-Microbe
-                        Interactions consortium, covering tree inference, comparative genomics,
-                        and evolutionary analysis of plant and microbial genomes.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Phylogenomics</span>
-                        <span class="tag">Comparative Genomics</span>
-                        <span class="tag">TRR356</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>Fundamentals of Bioinformatics for Transcriptomics</h3>
-                    <p class="project-role">Course Co-Developer & Instructor — TUM</p>
-                    <p class="project-description">
-                        40-hour practical course co-developed and delivered at TUM over 4 semesters
-                        for ~30 students per cohort, covering RNA-seq analysis end-to-end on
-                        multi-VM de.NBI cloud infrastructure.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">RNA-Seq</span>
-                        <span class="tag">Cloud Infrastructure</span>
-                        <span class="tag">Teaching</span>
-                    </div>
-                </div>
-
-            </div>
+        <div class="institution-badge">
+          <div class="institution-dot" style="background: var(--terra);"></div>
+          <div class="institution-name">
+            Sentry Bio
+            <span>Co-Founder &amp; CTO · sentry.bio</span>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- CV Section -->
-    <section id="cv" class="section">
-        <div class="container">
-            <h2 class="section-title">Curriculum Vitae</h2>
+    </div>
+  </section>
 
-            <div class="cv-download">
-                <p>Download my complete CV for detailed information about my education, experience, and publications.</p>
-                <a href="assets/CV_Amit_Fenn_Oct25.pdf" class="btn btn-primary" download>Download CV (PDF)</a>
-            </div>
-
-            <div class="cv-highlights">
-                <h3>Highlights</h3>
-
-                <div class="cv-section">
-                    <h4>Current Positions</h4>
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <strong>Postdoctoral Researcher</strong>
-                            <span class="cv-date">Feb 2024-Present</span>
-                        </div>
-                        <p>Technical University of Munich (TUM) Weihenstephan</p>
-                        <p>Kamal Research Group, Plant Genomes and Systems Biology</p>
-                        <p>TRR 356 Plant Microbe Initiative - Z03</p>
-                    </div>
-                    <div class="cv-item">
-                    <div class="cv-item-header">
-                        <strong>Postdoctoral Researcher (salaried)</strong>
-                        <span class="cv-date">Jan 2023–Present</span>
-                    </div>
-                    <p>Plant Genome and Systems Biology (PGSB), Helmholtz Munich</p>
-                    <p>Research conducted at TUM School of Life Sciences from Feb 2024</p>
-                </div>
-                </div>
-
-                <div class="cv-section">
-                    <h4>Education</h4>
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <strong>Ph.D. in Bioinformatics</strong>
-                            <span class="cv-date">2019-2022</span>
-                        </div>
-                        <p>Technical University of Munich (TUM)</p>
-                        <p>Dissertation: "Towards Reproducibility in Alternative Splicing Analysis"</p>
-                    </div>
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <strong>M.Sc. in Biology</strong>
-                            <span class="cv-date">2017-2019</span>
-                        </div>
-                        <p>Ludwig-Maximilians University (LMU) Munich</p>
-                        <p>Specialization: Cell Biology & Biochemistry</p>
-                    </div>
-                </div>
-
-                <div class="cv-section">
-                    <h4>Key Skills</h4>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <strong>Computational Biology</strong>
-                            <ul>
-                                <li>Alternative Splicing Analysis</li>
-                                <li>RNA-Seq & Transcriptomics</li>
-                                <li>Multi-Omics Integration</li>
-                                <li>Network Biology</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <strong>Technical Skills</strong>
-                            <ul>
-                                <li>Bioinformatics Tool Development</li>
-                                <li>Nanopore Metagenomics</li>
-                                <li>High-Performance Computing</li>
-                                <li>Statistical Analysis</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <strong>Research Areas</strong>
-                            <ul>
-                                <li>Plant Genomics</li>
-                                <li>Plant-Microbe Interactions</li>
-                                <li>Comparative Genomics</li>
-                                <li>Systems Biology</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- ── About ───────────────────────────────────────────────── -->
+  <section id="about">
+    <div class="section">
+      <div class="section-header reveal">
+        <span class="section-label">Background</span>
+        <h2 class="section-title">About</h2>
+      </div>
+      <div class="about-body">
+        <div class="about-main reveal">
+          <p>
+            I am a computational biologist specialising in plant-microbe genomics,
+            alternative splicing, and transcriptomics. As Postdoctoral Researcher
+            at TUM Weihenstephan and Helmholtz Munich, I serve as the bioinformatics
+            core for the TRR 356 collaborative research initiative — providing
+            analytical infrastructure and pipeline support for 8+ research groups
+            across TUM, LMU, Tübingen, and MPI.
+          </p>
+          <p>
+            My PhD at TUM (2019–2022) focused on reproducibility in alternative
+            splicing analysis, resulting in DICAST — an open benchmarking platform
+            that was used on clinical RNA-seq datasets. That commitment
+            to reproducible, open methodology shapes every project I take on.
+          </p>
+          <p>
+            Outside academia, I co-founded Sentry Bio, applying metagenomic sequencing
+            and ML-based taxonomic classification to autonomous pathogen detection
+            and environmental biosurveillance.
+          </p>
         </div>
-    </section>
+        <div class="about-aside reveal">
+          <div class="aside-item">
+            <div class="aside-label">Current Role</div>
+            <div class="aside-value">Postdoctoral Researcher<br>TUM & Helmholtz Munich</div>
+          </div>
+          <div class="aside-item">
+            <div class="aside-label">PhD</div>
+            <div class="aside-value">Bioinformatics, TUM<br>2019–2022</div>
+          </div>
+          <div class="aside-item">
+            <div class="aside-label">MSc</div>
+            <div class="aside-value">Biology, LMU Munich<br>2017–2019</div>
+          </div>
+          <div class="aside-item">
+            <div class="aside-label">Also</div>
+            <div class="aside-value">Co-Founder & CTO<br>Sentry Bio</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-content">
-                <p class="contact-intro">
-                    I'm interested in discussing research collaborations, computational biology projects,
-                    and opportunities at the intersection of genomics and systems biology.
-                </p>
+  <!-- ── Selected Outputs ────────────────────────────────────── -->
+  <section id="outputs" class="section-alt">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label">Selected Outputs</span>
+        <h2 class="section-title">What I've Created</h2>
+      </div>
 
-                <div class="contact-grid">
-                    <div class="contact-card">
-                        <h3>Email</h3>
-                        <p><a href="mailto:amitfenn@gmail.com">amitfenn@gmail.com</a></p>
-                    </div>
+      <div class="outputs-list">
 
-                    <div class="contact-card">
-                        <h3>Academic Profile</h3>
-                        <p><a href="https://scholar.google.com/citations?user=R11zICsAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a></p>
-                        <p><a href="https://orcid.org/0000-0003-2203-3922" target="_blank">ORCID</a></p>
-                    </div>
+        <div class="output-item reveal">
+          <div class="output-index">01</div>
+          <div>
+            <div class="output-badge nature">Nature · 2026</div>
+            <h3 class="output-title">Oat Pangenome &amp; Pantranscriptome</h3>
+            <p class="output-desc">
+              Analysed differentially expressed genes at translocation breakpoints
+              within the hexaploid oat pangenome — investigating whether structural
+              genomic rearrangements drive transcriptional changes across diverse varieties.
+            </p>
+          </div>
+          <a href="https://www.nature.com/articles/s41586-025-09676-7"
+             class="output-link" target="_blank">View publication →</a>
+        </div>
 
-                    <div class="contact-card">
-                        <h3>Professional</h3>
-                        <p><a href="https://www.linkedin.com/in/amitfenn/" target="_blank">LinkedIn</a></p>
-                        <p><a href="https://github.com/amitfenn" target="_blank">GitHub</a></p>
-                    </div>
-                </div>
+        <div class="output-item reveal">
+          <div class="output-index">02</div>
+          <div>
+            <div class="output-badge tool">Open Source Tool</div>
+            <h3 class="output-title">DICAST — Alternative Splicing Benchmark</h3>
+            <p class="output-desc">
+              Python-based open benchmarking platform for 20+ RNA splicing detection
+              methods across clinical RNA-seq datasets. Lead developer, coordinating
+              a team of 5. The reference benchmark in its domain.
+            </p>
+          </div>
+          <a href="https://dicast.readthedocs.io/en/master/contents.html"
+             class="output-link" target="_blank">View documentation →</a>
+        </div>
+
+        <div class="output-item reveal">
+          <div class="output-index">03</div>
+          <div>
+            <div class="output-badge preprint">Preprint</div>
+            <h3 class="output-title">Field-Deployable Metagenomic Sequencing</h3>
+            <p class="output-desc">
+              Developed a custom NVIDIA Jetson-based compute module paired with
+              Oxford Nanopore Mk1B for real-time basecalling and metagenomic
+              sequencing of environmental microbial communities in the field.
+            </p>
+          </div>
+          <a href="https://www.biorxiv.org/content/10.1101/2023.12.19.572325v1"
+             class="output-link" target="_blank">View preprint →</a>
+        </div>
+
+        <div class="output-item reveal">
+          <div class="output-index">04</div>
+          <div>
+            <div class="output-badge infrastructure">Bioinformatics Infrastructure</div>
+            <h3 class="output-title">TRR 356 Analytical Core</h3>
+            <p class="output-desc">
+              Pipeline infrastructure and HPC resource management supporting 8+
+              research groups across TUM, LMU, Tübingen and MPI — investigating
+              plant-microbe interactions at scale.
+            </p>
+          </div>
+          <a href="https://trr356plantmicrobe.de/people/employees1/fenn/index.html"
+             class="output-link" target="_blank">TRR356 profile →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Open Science ─────────────────────────────────────────── -->
+  <section id="open-science">
+    <div class="section">
+      <div class="section-header reveal">
+        <span class="section-label">How I Work</span>
+        <h2 class="section-title">Open Science</h2>
+      </div>
+
+      <p class="os-header-note reveal">
+        All pipelines, tools, and course materials are publicly available.
+        If you're learning or building on this work — you're welcome to.
+      </p>
+
+      <div class="os-grid">
+
+        <div class="os-card reveal">
+          <div class="os-card-type">Open Source Tool</div>
+          <h3 class="os-card-title">DICAST</h3>
+          <p class="os-card-desc">
+            Benchmarking platform for alternative splicing detection.
+            20+ tools evaluated across standardised RNA-seq datasets.
+            Built for reproducibility from the ground up.
+          </p>
+          <div class="os-tags">
+            <span class="tag">Python</span>
+            <span class="tag">RNA-Seq</span>
+            <span class="tag">Benchmarking</span>
+            <span class="tag">Open Source</span>
+          </div>
+          <a href="https://dicast.readthedocs.io" class="os-card-link" target="_blank">
+            Documentation →
+          </a>
+        </div>
+
+        <div class="os-card reveal">
+          <div class="os-card-type">Workshop</div>
+          <h3 class="os-card-title">Introduction to nf-core Pipelines</h3>
+          <p class="os-card-desc">
+            Hands-on workshop covering pipeline execution, configuration,
+            and HPC best practices for reproducible workflows.
+            Run for the TRR356 consortium on LRZ infrastructure.
+          </p>
+          <div class="os-tags">
+            <span class="tag">Nextflow</span>
+            <span class="tag">nf-core</span>
+            <span class="tag">HPC</span>
+            <span class="tag">Reproducibility</span>
+          </div>
+          <a href="https://gitlab.plantmicrobe.de/z03-workshop/intro-to-nf-core-pipelines"
+             class="os-card-link" target="_blank">
+            View materials →
+          </a>
+        </div>
+
+        <div class="os-card reveal">
+          <div class="os-card-type">Workshop</div>
+          <h3 class="os-card-title">Phylogenomics for Plant-Microbe Research</h3>
+          <p class="os-card-desc">
+            Tree inference, comparative genomics, and evolutionary analysis
+            of plant and microbial genomes. Developed for the TRR356 consortium.
+          </p>
+          <div class="os-tags">
+            <span class="tag">Phylogenomics</span>
+            <span class="tag">Comparative Genomics</span>
+            <span class="tag">TRR356</span>
+          </div>
+        </div>
+
+        <div class="os-card reveal">
+          <div class="os-card-type">University Course</div>
+          <h3 class="os-card-title">Fundamentals of Bioinformatics for Transcriptomics</h3>
+          <p class="os-card-desc">
+            40-hour practical course co-developed and delivered at TUM over
+            4 semesters, ~30 students per cohort. RNA-seq end-to-end on
+            de.NBI cloud infrastructure.
+          </p>
+          <div class="os-tags">
+            <span class="tag">RNA-Seq</span>
+            <span class="tag">Cloud Infrastructure</span>
+            <span class="tag">TUM</span>
+          </div>
+        </div>
+
+        <div class="os-card reveal">
+          <div class="os-card-type">nf-core Contribution</div>
+          <h3 class="os-card-title">LRZ CM4 Config for nf-core</h3>
+          <p class="os-card-desc">
+            Contributed the <code>lrz_cm4</code> institutional configuration
+            to nf-core/configs (PR #981), enabling seamless pipeline execution
+            on LRZ CM4 HPC for the community.
+          </p>
+          <div class="os-tags">
+            <span class="tag">nf-core</span>
+            <span class="tag">LRZ</span>
+            <span class="tag">HPC</span>
+            <span class="tag">Community</span>
+          </div>
+        </div>
+
+        <div class="os-card reveal">
+          <div class="os-card-type">Consortium Support</div>
+          <h3 class="os-card-title">TRR356 Bioinformatics Core</h3>
+          <p class="os-card-desc">
+            Pipeline infrastructure and support for 8+ research groups.
+            Analytical workflows for dual-species RNA-seq, pangenomics,
+            and co-expression network analysis.
+          </p>
+          <div class="os-tags">
+            <span class="tag">Infrastructure</span>
+            <span class="tag">WGCNA</span>
+            <span class="tag">Pangenomics</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="os-github-callout reveal">
+        <p>"DICAST, a microbial diversity pipeline, and an LMU thesis LaTeX template — among others"</p>
+        <a href="https://github.com/amitfenn" target="_blank">github.com/amitfenn →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Sentry Bio ───────────────────────────────────────────── -->
+  <section id="sentry">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label">Also</span>
+        <h2 class="section-title">Sentry Bio</h2>
+      </div>
+
+      <div class="sentry-grid">
+        <div class="sentry-body reveal">
+          <div class="sentry-role">Co-Founder &amp; CTO</div>
+          <p>
+            Sentry Bio is an autonomous biosurveillance platform I co-founded,
+            applying the same metagenomic sequencing and ML-based taxonomic
+            classification methods from my research to real-world pathogen detection.
+          </p>
+          <p>
+            We are building foundation model pretraining pipelines for metagenomic
+            sequence analysis — trained on environmental DNA to detect, classify,
+            and track microbial communities in near real-time using nanopore sequencing.
+          </p>
+          <p>
+            The motivation comes from a gap we observed in research contexts — field-deployable
+            sequencing exists, but the analytical layer rarely travels with it. Sentry Bio is
+            building that layer: lightweight, reproducible, and designed to run where the samples are.
+          </p>
+          <div class="sentry-tags">
+            <span class="sentry-tag">Foundation Models</span>
+            <span class="sentry-tag">Nanopore Sequencing</span>
+            <span class="sentry-tag">Metagenomics</span>
+            <span class="sentry-tag">Biosurveillance</span>
+            <span class="sentry-tag">Environmental DNA</span>
+          </div>
+          <a href="https://sentry.bio/" class="sentry-link" target="_blank">
+            Visit Sentry Bio →
+          </a>
+        </div>
+
+        <div class="sentry-aside reveal">
+          <div class="sentry-stat">
+            <div class="sentry-stat-num">500+</div>
+            <div class="sentry-stat-label">Species classifiable from environmental DNA</div>
+          </div>
+          <div class="sentry-stat">
+            <div class="sentry-stat-num">2</div>
+            <div class="sentry-stat-label">Foundation models in development</div>
+          </div>
+          <div class="sentry-stat">
+            <div class="sentry-stat-num">2</div>
+            <div class="sentry-stat-label">Consumer-grade GPUs — no cloud dependency</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CV ──────────────────────────────────────────────────── -->
+  <section id="cv">
+    <div class="section">
+      <div class="section-header reveal">
+        <span class="section-label">Curriculum Vitae</span>
+        <h2 class="section-title">The Record</h2>
+      </div>
+
+      <div class="cv-grid">
+
+        <div>
+          <div class="cv-block reveal">
+            <div class="cv-block-title">Current Positions</div>
+            <div class="cv-item">
+              <div class="cv-item-row">
+                <span class="cv-item-title">Postdoctoral Researcher</span>
+                <span class="cv-date">Jan 2023–Present</span>
+              </div>
+              <div class="cv-item-sub">
+                Helmholtz Munich · Plant Genome and Systems Biology (PGSB)<br>
+                Technical University of Munich · Kamal Research Group · TRR 356 Z03
+                <span style="display:block; margin-top:0.25rem; font-size:0.75rem; color: var(--ink-faint);">Salaried at Helmholtz from Jan 2023 · physically at TUM Weihenstephan from Feb 2024</span>
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Dr. Amit Fenn. All rights reserved.</p>
-            <p>Built with vanilla HTML, CSS, and JavaScript</p>
+          <div class="cv-block reveal">
+            <div class="cv-block-title">Education</div>
+            <div class="cv-item">
+              <div class="cv-item-row">
+                <span class="cv-item-title">Ph.D. in Bioinformatics</span>
+                <span class="cv-date">2019–2022</span>
+              </div>
+              <div class="cv-item-sub">
+                Technical University of Munich<br>
+                <em>Towards Reproducibility in Alternative Splicing Analysis</em>
+              </div>
+            </div>
+            <div class="cv-item">
+              <div class="cv-item-row">
+                <span class="cv-item-title">M.Sc. in Biology</span>
+                <span class="cv-date">2017–2019</span>
+              </div>
+              <div class="cv-item-sub">
+                Ludwig-Maximilians University (LMU) Munich<br>
+                Cell Biology &amp; Biochemistry
+              </div>
+            </div>
+          </div>
         </div>
-    </footer>
 
-    <script src="assets/js/script.js"></script>
+        <div>
+          <div class="cv-block reveal">
+            <div class="cv-block-title">Key Skills</div>
+            <div class="cv-skills">
+              <div class="skill-row">
+                <span class="skill-cat">Genomics</span>
+                <span class="tag">Alternative Splicing</span>
+                <span class="tag">RNA-Seq</span>
+                <span class="tag">Pangenomics</span>
+              </div>
+              <div class="skill-row">
+                <span class="skill-cat">Methods</span>
+                <span class="tag">Multi-Omics</span>
+                <span class="tag">WGCNA</span>
+                <span class="tag">DESeq2</span>
+                <span class="tag">Network Biology</span>
+              </div>
+              <div class="skill-row">
+                <span class="skill-cat">Tools</span>
+                <span class="tag">Nextflow / nf-core</span>
+                <span class="tag">Nanopore</span>
+                <span class="tag">HPC / SLURM</span>
+              </div>
+              <div class="skill-row">
+                <span class="skill-cat">Languages</span>
+                <span class="tag">Python</span>
+                <span class="tag">R / Bioconductor</span>
+                <span class="tag">Bash</span>
+              </div>
+              <div class="skill-row">
+                <span class="skill-cat">Research</span>
+                <span class="tag">Plant Genomics</span>
+                <span class="tag">Plant-Microbe</span>
+                <span class="tag">Comparative Genomics</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cv-download-block reveal">
+            <p>Complete CV with publications, teaching, and conference contributions.</p>
+            <a href="assets/CV_Amit_Fenn_Oct25.pdf" class="btn btn-primary" download>
+              Download CV (PDF)
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact ─────────────────────────────────────────────── -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">Get in Touch</h2>
+      </div>
+
+      <p class="contact-intro reveal">
+        Reach out depending on what brought you here.
+      </p>
+
+      <div class="contact-forks reveal">
+        <div class="contact-fork">
+          <div class="fork-domain">Plant Genomics &amp; Bioinformatics</div>
+          <h3 class="fork-title">Research collaborations,<br>pipeline &amp; methods questions</h3>
+          <p class="fork-desc">
+            TRR 356, plant-microbe genomics, RNA-seq analysis,
+            nf-core pipelines, WGCNA, pangenomics, or teaching.
+          </p>
+          <a href="mailto:amit.fenn@tum.de" class="fork-email">amit.fenn@tum.de</a>
+        </div>
+        <div class="contact-fork">
+          <div class="fork-domain">Biosurveillance &amp; Environmental DNA</div>
+          <h3 class="fork-title">Sentry Bio, metagenomic<br>sequencing &amp; partnerships</h3>
+          <p class="fork-desc">
+            Pathogen detection, environmental monitoring,
+            nanopore sequencing deployments, or investor inquiries.
+          </p>
+          <a href="mailto:amit@sentry.bio" class="fork-email">amit@sentry.bio</a>
+        </div>
+      </div>
+
+      <div class="contact-profiles reveal">
+        <a href="https://scholar.google.com/citations?user=R11zICsAAAAJ&hl=en&oi=ao"
+           class="profile-link" target="_blank">
+          <span class="profile-type">Academic</span>
+          <span class="profile-name">Google Scholar</span>
+        </a>
+        <a href="https://orcid.org/0000-0003-2203-3922"
+           class="profile-link" target="_blank">
+          <span class="profile-type">Academic</span>
+          <span class="profile-name">ORCID</span>
+        </a>
+        <a href="https://www.linkedin.com/in/amitfenn/"
+           class="profile-link" target="_blank">
+          <span class="profile-type">Professional</span>
+          <span class="profile-name">LinkedIn</span>
+        </a>
+        <a href="https://github.com/amitfenn"
+           class="profile-link" target="_blank">
+          <span class="profile-type">Open Source</span>
+          <span class="profile-name">GitHub</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ──────────────────────────────────────────────── -->
+  <footer>
+    <p>&copy; 2026 Dr. Amit Mathai Fenn</p>
+    <p>Vanilla HTML · CSS · JS · Hosted on GitHub Pages</p>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
-
