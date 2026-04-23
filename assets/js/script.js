@@ -1,130 +1,92 @@
-// Mobile Menu Toggle
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.querySelector('.nav-links');
+/* ============================================================
+   AMIT FENN — Site Script
+   Handles: nav scroll state, hero institution fade,
+            scroll reveal, hamburger menu
+   ============================================================ */
 
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+(function () {
+  'use strict';
 
-    // Animate hamburger
-    const spans = hamburger.querySelectorAll('span');
-    if (navLinks.classList.contains('active')) {
-        spans[0].style.transform = 'rotate(45deg) translateY(8px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
-    } else {
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-    }
-});
+  /* ── Nav scroll state ──────────────────────────────────────── */
+  const navbar = document.getElementById('navbar');
+  let lastScroll = 0;
 
-// Close mobile menu when clicking on a link
-const navLinksItems = document.querySelectorAll('.nav-links a');
-navLinksItems.forEach(link => {
-    link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-            navLinks.classList.remove('active');
-            const spans = hamburger.querySelectorAll('span');
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
-        }
-    });
-});
+  function onScroll() {
+    const y = window.scrollY;
 
-// Smooth Scrolling (additional fallback for older browsers)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
+    // Add shadow when scrolled
+    navbar.classList.toggle('scrolled', y > 20);
 
-        // Skip if it's just "#"
-        if (href === '#') {
-            e.preventDefault();
-            return;
-        }
-
-        const target = document.querySelector(href);
-        if (target) {
-            e.preventDefault();
-            const offsetTop = target.offsetTop - 80; // Account for fixed navbar
-
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Navbar background on scroll
-const navbar = document.getElementById('navbar');
-let lastScroll = 0;
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    // Add shadow to navbar when scrolled
-    if (currentScroll > 10) {
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.boxShadow = 'none';
+    // Fade institutions as hero scrolls away
+    const institutions = document.querySelector('.hero-institutions');
+    if (institutions) {
+      institutions.classList.toggle('faded', y > 120);
     }
 
-    lastScroll = currentScroll;
-});
+    lastScroll = y;
+  }
 
-// Add active state to nav links based on scroll position
-const sections = document.querySelectorAll('section');
-const navItems = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', onScroll, { passive: true });
 
-function highlightNavOnScroll() {
-    let current = '';
-    const scrollPosition = window.pageYOffset + 100;
+  /* ── Scroll reveal ─────────────────────────────────────────── */
+  const revealEls = document.querySelectorAll('.reveal');
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navItems.forEach(item => {
-        item.classList.remove('active');
-        if (item.getAttribute('href') === `#${current}`) {
-            item.classList.add('active');
-        }
-    });
-}
-
-window.addEventListener('scroll', highlightNavOnScroll);
-
-// Intersection Observer for fade-in animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+          // Staggered delay based on index within parent
+          const siblings = Array.from(
+            entry.target.parentElement.querySelectorAll('.reveal')
+          );
+          const idx = siblings.indexOf(entry.target);
+          entry.target.style.transitionDelay = `${idx * 80}ms`;
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  revealEls.forEach((el) => observer.observe(el));
+
+  /* ── Hamburger menu ────────────────────────────────────────── */
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
     });
-}, observerOptions);
 
-// Observe cards and sections for animation
-const animatedElements = document.querySelectorAll('.interest-card, .project-card, .publication-item, .contact-card, .cv-item');
-animatedElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-});
+    // Close on link click
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+      });
+    });
+  }
 
-// Console message for developers
-console.log('%c👋 Hello Developer!', 'font-size: 20px; font-weight: bold; color: #2563eb;');
-console.log('%cThis site was built with vanilla HTML, CSS, and JavaScript.', 'font-size: 14px; color: #5a6c7d;');
-console.log('%cInterested in the source code? Check it out on GitHub!', 'font-size: 14px; color: #5a6c7d;');
+  /* ── Active nav link on scroll ─────────────────────────────── */
+  const sections = document.querySelectorAll('section[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+
+  function updateActiveNav() {
+    let current = '';
+    sections.forEach((sec) => {
+      const top = sec.offsetTop - 80;
+      if (window.scrollY >= top) current = sec.id;
+    });
+
+    navAnchors.forEach((a) => {
+      a.style.color = '';
+      if (a.getAttribute('href') === `#${current}`) {
+        a.style.color = 'var(--tum)';
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+
+})();
