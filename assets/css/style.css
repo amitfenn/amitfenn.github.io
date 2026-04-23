@@ -127,6 +127,10 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
 }
 
+/* Ensure hero content sits above helix layer */
+.hero-bg-rule,
+.hero-inner { position: relative; z-index: 1; }
+
 .hero-bg-rule {
   position: absolute;
   top: 0; bottom: 0; left: 50%;
@@ -711,6 +715,160 @@ footer {
 }
 
 footer p { font-family: var(--font-mono); font-size: 0.65rem; color: var(--ink-faint); letter-spacing: 0.04em; }
+
+/* ── DNA Helix Animation ─────────────────────────────────────── */
+.helix-rung {
+  display: flex;
+  align-items: center;
+  animation: helixSpin linear infinite;
+  will-change: transform;
+}
+
+@keyframes helixSpin {
+  0%   { transform: scaleX(1); }
+  25%  { transform: scaleX(0.12); }
+  50%  { transform: scaleX(-1); }
+  75%  { transform: scaleX(-0.12); }
+  100% { transform: scaleX(1); }
+}
+
+.hb {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.hbridge {
+  flex: 1;
+  height: 1px;
+  min-width: 16px;
+  opacity: 0.25;
+}
+
+/* ── Matrix Canvas Background ───────────────────────────────── */
+#outputs {
+  position: relative;
+  overflow: hidden;
+}
+
+.matrix-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 1;
+}
+
+#outputs .section-inner { position: relative; z-index: 1; }
+
+/* ── Phylogenetic Tree Background ───────────────────────────── */
+#open-science {
+  position: relative;
+  overflow: hidden;
+}
+
+.tree-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* branches stay invisible until tree-animate class added by JS */
+.tb {
+  stroke: #A9B9D9;
+  stroke-width: 1px;
+  fill: none;
+  stroke-dashoffset: var(--dd, 600);
+}
+
+.tree-animate .tb {
+  animation: treeDraw var(--dd) ease forwards;
+  animation-delay: var(--bd, 0s);
+}
+
+@keyframes treeDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+.tld {
+  opacity: 0;
+}
+
+.tree-animate .tld {
+  animation: treePopDot 0.35s ease forwards;
+  animation-delay: var(--ld, 2.5s);
+}
+
+@keyframes treePopDot {
+  0%   { opacity: 0; r: 0; }
+  70%  { opacity: 0.7; r: 5; }
+  100% { opacity: 0.7; r: 4; }
+}
+
+.tll {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  fill: #A9B9D9;
+  opacity: 0;
+}
+
+.tree-animate .tll {
+  animation: treeFadeIn 0.4s ease forwards;
+  animation-delay: var(--ld, 2.6s);
+}
+
+.tcl {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  opacity: 0;
+}
+
+.tree-animate .tcl {
+  animation: treeFadeIn 0.5s ease forwards;
+  animation-delay: var(--ld, 2.8s);
+}
+
+@keyframes treeFadeIn { to { opacity: 0.6; } }
+
+/* ensure section content sits above tree */
+#open-science .section { position: relative; z-index: 1; }
+
+/* ── Viral Particles ─────────────────────────────────────────── */
+#sentry { position: relative; overflow: hidden; }
+
+.virus-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#sentry .section-inner { position: relative; z-index: 1; }
+
+.virus-particle {
+  position: absolute;
+  bottom: -20px;
+  opacity: 0;
+  pointer-events: none;
+  animation: virusRise var(--vdur) ease-in-out infinite;
+  animation-delay: var(--vdelay);
+}
+
+@keyframes virusRise {
+  0%   { opacity: 0;            transform: translateY(0)      translateX(0)        rotate(0deg); }
+  7%   { opacity: var(--vpeak); }
+  88%  { opacity: var(--vpeak); transform: translateY(-380px) translateX(var(--vx)) rotate(var(--vrot)); }
+  100% { opacity: 0;            transform: translateY(-440px) translateX(var(--vx)) rotate(var(--vrot)); }
+}
 
 /* ── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 900px) {
